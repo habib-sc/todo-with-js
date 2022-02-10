@@ -15,7 +15,7 @@ document.getElementById('todo-add-btn').addEventListener('click', function() {
         tableRow.innerHTML = `
         <th scope="row">${itemIndex}</th>
         <td>${todoInput.value}</td>
-        <td class="w-25"><button type="button" class="btn btn-success btn-sm">Done</button>
+        <td class="w-25"><button type="button" class="todo-done-btn btn btn-success btn-sm">Done</button>
             <button type="button" class="btn btn-primary btn-sm">Edit</button>
             <button type="button" class="todo-delete-btn btn btn-danger btn-sm">Delete</button>
         </td>
@@ -23,8 +23,6 @@ document.getElementById('todo-add-btn').addEventListener('click', function() {
         // appending element to container 
         todoContainer.appendChild(tableRow);
     }
-
-
 
     // clearing the todo input field 
     todoInput.value = '';
@@ -45,4 +43,18 @@ document.getElementById('todo-add-btn').addEventListener('click', function() {
             todoItem.style.display = 'none';
         })
     }
+
+    // Todo Done feature 
+
+    // Getting done buttons 
+    const doneButtons = document.getElementsByClassName('todo-done-btn');
+
+    // button iteration
+    for (const doneButton of doneButtons) {
+        doneButton.addEventListener('click', function(event) {
+            // applying line-through
+            event.target.parentNode.parentNode.style.textDecoration = 'line-through';
+        })
+    }
+
 })
