@@ -21,8 +21,9 @@
         <!-- Input section Start  -->
         <section>
             <div class="input-group mb-3 w-50 mx-auto">
-                <input type="text" class="form-control" placeholder="Todo Description">
-                <button class="btn btn-primary" type="button" id="button-addon2">Add an Item</button>
+                <input id="todo-input" type="text" class="form-control" placeholder="Todo Description">
+                <button onclick="todoAdd()" class="btn btn-primary" type="button" id="button-addon2">Add an
+                    Item</button>
             </div>
         </section>
         <!-- Input section End -->
@@ -37,7 +38,7 @@
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="todo-container">
                     <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
@@ -51,6 +52,8 @@
         </section>
         <!-- Todo items section End -->
     </main>
+
+    <script src="./js/scripts.js"></script>
 
 </body>
 
