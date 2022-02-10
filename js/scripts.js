@@ -1,3 +1,6 @@
+// todo item index 
+let itemIndex = 1;
+
 function todoAdd() {
     // Getting todo input 
     const todoInput = document.getElementById('todo-input');
@@ -6,7 +9,7 @@ function todoAdd() {
     // Create Element 
     const tableRow = document.createElement('tr');
     tableRow.innerHTML = `
-    <th scope="row">1</th>
+    <th scope="row">${itemIndex}</th>
     <td>${todoInput.value}</td>
     <td class="w-25"><button type="button" class="btn btn-success btn-sm">Done</button>
         <button type="button" class="btn btn-primary btn-sm">Edit</button>
@@ -18,5 +21,8 @@ function todoAdd() {
 
     // clearing the todo input field 
     todoInput.value = '';
+
+    // Item index increase by 1
+    itemIndex++
 
 }
